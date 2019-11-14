@@ -1,4 +1,4 @@
-package Case;
+package emplacement;
 
 public abstract class Case {
 

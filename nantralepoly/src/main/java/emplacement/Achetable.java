@@ -1,4 +1,6 @@
-package Case;
+package emplacement;
+
+import joueur.Joueur;
 
 public abstract class Achetable extends Case {
     int prix;
@@ -28,15 +30,15 @@ public abstract class Achetable extends Case {
         this.prix = prix;
     }
 
-    public String getProprietaire() {
+    public Joueur getProprietaire() {
         return proprietaire;
     }
 
-    public void setProprietaire(String proprietaire) {
+    public void setProprietaire(Joueur proprietaire) {
         this.proprietaire = proprietaire;
     }
 
-    public abstract void acheter(Joueur joueur) {
+    public void acheter(Joueur joueur) {
         this.setProprietaire(joueur);
     }
 

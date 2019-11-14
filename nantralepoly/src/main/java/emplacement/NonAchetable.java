@@ -1,4 +1,4 @@
-package Case;
+package emplacement;
 
 public class NonAchetable extends Case {
 
