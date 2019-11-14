@@ -59,24 +59,23 @@ public class Constructible extends Achetable {
         this.nombreHotel = nombreHotel;
     }
 
-    public int loyer(){
+    public int loyer() {
         if (this.getProprietaire() == null) {
             return 0;
-        }
-        else {
-            int temp = (int) (this.getPrix()*0.05);
+        } else {
+            int temp = (int) (this.getPrix() * 0.05);
             return temp + this.prixMaison * this.nombreMaison + this.nombreHotel * this.prixHotel;
         }
     }
 
     public void construire() {
-        int somme = (int)(this.getPrix() * 0.1); // Le prix d'une maison correspond à 10% du prix du terrain
+        int somme = (int) (this.getPrix() * 0.1); // Le prix d'une maison correspond à 10% du prix du terrain
         this.getProprietaire().setFortune(this.proprietaire.getFortune() - somme);
         this.setNombreMaison(this.getNombreMaison() + 1);
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return super.toString();
     }
 }

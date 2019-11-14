@@ -18,17 +18,16 @@ public class Gare extends Achetable {
         this.proprietaire = proprietaire;
     }
 
-    public int loyer(){
+    public int loyer() {
         if (this.getProprietaire() == null) {
             return 0;
-        }
-        else {
+        } else {
             return 2500 * PlateauDeJeu.nbGares(this.getProprietaire());
         }
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return super.toString();
     }
 }

@@ -38,7 +38,7 @@ public abstract class Achetable extends Case {
         this.proprietaire = proprietaire;
     }
 
-    public void acheter(Joueur joueur){
+    public void acheter(Joueur joueur) {
         if (this.getProprietaire() == null) {
             joueur.setFortune(joueur.getFortune() - this.getPrix());
             this.setProprietaire(joueur);
