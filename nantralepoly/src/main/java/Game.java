@@ -7,6 +7,7 @@ class Game {
 
         PlateauDeJeu plateauDeJeu = new PlateauDeJeu();
         plateauDeJeu.init();
+        plateauDeJeu.affiche();
 
         System.out.println("Fin du programme.");
     }
