@@ -1,19 +1,19 @@
 package plateau;
 
-import emplacement.Case;
-import emplacement.Constructible;
-import emplacement.Gare;
-import emplacement.NonAchetable;
+import emplacement.*;
 import joueur.Joueur;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Random;
 
 /**
  * @author adrie
  */
 public class PlateauDeJeu {
 
-    private ArrayList<Case> plateau;
+    private static ArrayList<Case> plateau;
+    private LinkedList<Joueur> joueurs;
 
     public void init() {
         NonAchetable Depart = new NonAchetable();
@@ -21,6 +21,7 @@ public class PlateauDeJeu {
         Depart.setNumCase(0);
         plateau = new ArrayList<Case>();
         this.plateau.add(Depart);
+        joueurs = new LinkedList<Joueur>();
 
         Constructible BoulevardDeBelleville = new Constructible();
         BoulevardDeBelleville.setNumCase(1);
@@ -311,7 +312,79 @@ public class PlateauDeJeu {
 
     }
 
-    public static int nbGares(Joueur proprietaire) {
-        return 0;
+    public static int nbGares(Joueur j) {
+        int taille = plateau.size();
+        int nbGare = 0;
+        for (int i = 0; i < taille; i++) {
+            Case emplacement = plateau.get(i);
+            if (
+                    emplacement instanceof Gare) {
+                if (
+                        ((Gare) emplacement).getProprietaire() == j) {
+                    nbGare += 1;
+                }
+            }
+        }
+        return nbGare;
+    }
+
+    public void affiche() {
+        int taille = plateau.size();
+        for (int i = 0; i < taille; i++) {
+            System.out.println(plateau.get(i));
+        }
+    }
+
+    public Case avance(int d, Case c) {
+        return (plateau.get(c.getNumCase() + d));
+    }
+
+    private int lancerDe() {
+        Random generateurAleatoire = new Random();
+        return (generateurAleatoire.nextInt(6) + 1);
+    }
+
+    private void tourDeJeu() {
+        int nbJoueurs = joueurs.size();
+        for (int i = 0; i < nbJoueurs; i++) {
+            Joueur j = joueurs.get(i);
+            int nbAleatoire = lancerDe() + lancerDe();
+            Case nouvelleCase = avance(nbAleatoire, j.getPosition());
+            j.setPosition(nouvelleCase);
+            if (nouvelleCase instanceof Achetable) {
+                if (((Achetable) nouvelleCase).getProprietaire() == null) {
+                    if (j.getFortune() >= ((Achetable) nouvelleCase).getPrix()) {
+                        switch (nbAleatoire % 2) {
+                            case 1: {
+                                j.setFortune(j.getFortune() - ((Achetable) nouvelleCase).getPrix());
+                                ((Achetable) nouvelleCase).setProprietaire(j);
+                                break;
+                            }
+                            default: {
+                                break;
+                            }
+                        }
+                    }
+                } else {
+                    if (((Achetable) nouvelleCase).getProprietaire() == j) {
+                        if (nouvelleCase instanceof Constructible) {
+                            switch (nbAleatoire % 2) {
+                                case 0: {
+                                    if (j.getFortune() >= ((Constructible) nouvelleCase).getLoyerMaison()) {
+                                        ((Constructible) nouvelleCase).construire();
+                                    }
+                                    break;
+                                }
+                                default:
+                                    break;
+                            }
+                        }
+                    } else {
+                        j.setFortune(j.getFortune() - ((Achetable) nouvelleCase).loyer());
+                        //TODO: Eliminer jouer s'il n'a plus d'argent, s'il reste un seul joueur ensuite, ce dernier gagne la partie.
+                    }
+                }
+            }
+        }
     }
 }
