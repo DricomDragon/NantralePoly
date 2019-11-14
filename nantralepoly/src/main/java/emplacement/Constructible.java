@@ -48,23 +48,22 @@ public class Constructible extends Achetable {
         this.nbMaison = nbMaison;
     }
 
-    public void reset(){
+    public void reset() {
         super.reset();
         this.setNbMaison(0);
     }
 
-    public int loyer(){
-        int temp = (int) (this.getPrix()*0.05);
+    public int loyer() {
+        int temp = (int) (this.getPrix() * 0.05);
         if (this.getNbMaison() == 5) {
             return temp + this.getLoyerHotel();
-        }
-        else {
+        } else {
             return temp + this.getLoyerMaison() * this.getNbMaison();
         }
     }
 
     public void construire() {
-        int somme = (int)(this.getPrix() * 0.1); // Le prix d'une maison correspond à 10% du prix du terrain
+        int somme = (int) (this.getPrix() * 0.1); // Le prix d'une maison correspond à 10% du prix du terrain
         this.getProprietaire().setFortune(this.getProprietaire().getFortune() - somme);
         this.setNbMaison(this.getNbMaison() + 1);
     }
