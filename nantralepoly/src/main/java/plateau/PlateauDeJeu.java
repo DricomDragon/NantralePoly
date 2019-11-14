@@ -4,6 +4,7 @@ import emplacement.*;
 import joueur.Joueur;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -342,6 +343,51 @@ public class PlateauDeJeu {
     private int lancerDe() {
         Random generateurAleatoire = new Random();
         return (generateurAleatoire.nextInt(6) + 1);
+    }
+
+    /**
+     * Indique si une partie est terminée (il ne reste qu'un seul joueur).
+     * @return
+     */
+    private boolean finPartie() {
+        return (joueurs.size() == 1);
+    }
+
+    /**
+     * Commence une partie et fait jouer tous les joueurs jusqu'à la fin de la
+     * partie.
+     */
+    public void lancerPartie() {
+        System.out.println("Début de la partie !");
+        while(!this.finPartie()) {
+            this.tourDeJeu();
+        }
+        Joueur gagnant = this.joueurs.get(0); // Il ne reste qu'un joueur
+        System.out.println("La partie est terminée.");
+        System.out.println("Le gagnant est " + gagnant.getNom() + ".");
+    }
+
+    /**
+     * Elimine le joueur et remet à zéro toutes ses propriétés.
+     * @param j Le joueur à éliminer
+     */
+    private void joueurElimination(Joueur j) {
+        // Remise à zéro des cases possédées par le joueur
+        for(Case c: plateau) {
+            if ((c instanceof Achetable) && (((Achetable) c).getProprietaire() == j)) {
+                ((Achetable) c).reset();
+            }
+        }
+
+        // Suppression du joueur de la liste des joueurs
+        Iterator<Joueur> joueursIt = joueurs.iterator();
+        Joueur autreJoueur;
+        while (joueursIt.hasNext()) {
+            autreJoueur = joueursIt.next();
+            if (autreJoueur == j) {
+                joueursIt.remove();
+            }
+        }
     }
 
     private void tourDeJeu() {
