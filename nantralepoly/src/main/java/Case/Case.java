@@ -5,7 +5,7 @@ public abstract class Case {
     int numCase;
     String nomCase;
 
-    public Case(){
+    public Case() {
         numCase = 0;
         nomCase = "caseNulle";
     }
@@ -15,7 +15,7 @@ public abstract class Case {
         this.nomCase = nomCase;
     }
 
-    public Case(Case c){
+    public Case(Case c) {
         this.numCase = c.getNumCase();
         this.nomCase = c.getNomCase();
     }
@@ -36,7 +36,7 @@ public abstract class Case {
         this.nomCase = nomCase;
     }
 
-    public String toString(){
+    public String toString() {
         return this.nomCase;
     }
 

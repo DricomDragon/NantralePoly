@@ -2,7 +2,7 @@ package Case;
 
 public class NonAchetable extends Case {
 
-    public NonAchetable(){
+    public NonAchetable() {
         super();
     }
 
@@ -10,11 +10,11 @@ public class NonAchetable extends Case {
         super(numCase, nomCase);
     }
 
-    public NonAchetable(NonAchetable n){
+    public NonAchetable(NonAchetable n) {
         super(n);
     }
 
-    public String toString(){
+    public String toString() {
         return super.toString();
     }
 }

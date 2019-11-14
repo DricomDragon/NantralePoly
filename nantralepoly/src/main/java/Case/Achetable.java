@@ -1,10 +1,10 @@
 package Case;
 
-public abstract class Achetable extends Case{
+public abstract class Achetable extends Case {
     int prix;
     Joueur proprietaire;
 
-    public Achetable(){
+    public Achetable() {
     }
 
     public Achetable(int numCase, String nomCase, int prix, Joueur proprietaire) {
@@ -13,7 +13,7 @@ public abstract class Achetable extends Case{
         this.proprietaire = proprietaire;
     }
 
-    public Achetable(Achetable achetable){
+    public Achetable(Achetable achetable) {
         super(achetable);
         this.nomCase = achetable.getNomCase();
         this.proprietaire = achetable.getProprietaire();
@@ -36,24 +36,23 @@ public abstract class Achetable extends Case{
         this.proprietaire = proprietaire;
     }
 
-    public abstract void acheter(Joueur joueur){
+    public abstract void acheter(Joueur joueur) {
         this.setProprietaire(joueur);
     }
 
     public abstract int loyer(Joueur joueur);
 
-    public String toString(){
+    public String toString() {
         String s = super.toString();
-        if(this.getProprietaire() == null){
+        if (this.getProprietaire() == null) {
             return s + "(coût : " + this.getPrix() + "€) - sans propriétaire";
-        }
-        else{
+        } else {
             return s + "(coût : " + this.getPrix() + "€) - propriétaire : " + this.getProprietaire().getNom() + ", ";
         }
 
     }
 
-    public void reset(){
+    public void reset() {
         this.setProprietaire(null);
     }
 }
