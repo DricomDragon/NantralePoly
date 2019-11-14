@@ -9,14 +9,13 @@ import joueur.Joueur;
 import java.util.ArrayList;
 
 /**
- *
  * @author adrie
  */
 public class PlateauDeJeu {
 
     private ArrayList<Case> plateau;
 
-    public void init(){
+    public void init() {
         NonAchetable Depart = new NonAchetable();
         Depart.setNomCase("Départ");
         Depart.setNumCase(0);
@@ -27,10 +26,9 @@ public class PlateauDeJeu {
         BoulevardDeBelleville.setNumCase(1);
         BoulevardDeBelleville.setNomCase("Boulevard De Belleville");
         BoulevardDeBelleville.setPrix(1400);
-        BoulevardDeBelleville.setNombreMaison(0);
-        BoulevardDeBelleville.setNombreHotel(0);
-        BoulevardDeBelleville.setPrixMaison(1000);
-        BoulevardDeBelleville.setPrixHotel(1000);
+        BoulevardDeBelleville.setNbMaison(0);
+        BoulevardDeBelleville.setLoyerMaison(1000);
+        BoulevardDeBelleville.setLoyerHotel(1000);
         this.plateau.add(BoulevardDeBelleville);
 
         NonAchetable CaisseDeCommunaute1 = new NonAchetable();
@@ -42,10 +40,9 @@ public class PlateauDeJeu {
         RueLecourbe.setNumCase(3);
         RueLecourbe.setNomCase("Rue Lecourbe");
         RueLecourbe.setPrix(1500);
-        RueLecourbe.setNombreMaison(0);
-        RueLecourbe.setNombreHotel(0);
-        RueLecourbe.setPrixMaison(1100);
-        RueLecourbe.setPrixHotel(1100);
+        RueLecourbe.setNbMaison(0);
+        RueLecourbe.setLoyerMaison(1100);
+        RueLecourbe.setLoyerHotel(1100);
         this.plateau.add(RueLecourbe);
 
         NonAchetable ImpotsSurLeRevenu = new NonAchetable();
@@ -63,10 +60,9 @@ public class PlateauDeJeu {
         RueDeVaugirard.setNumCase(6);
         RueDeVaugirard.setNomCase("Rue De Vaugirard");
         RueDeVaugirard.setPrix(1600);
-        RueDeVaugirard.setNombreMaison(0);
-        RueDeVaugirard.setNombreHotel(0);
-        RueDeVaugirard.setPrixMaison(1200);
-        RueDeVaugirard.setPrixHotel(1200);
+        RueDeVaugirard.setNbMaison(0);
+        RueDeVaugirard.setLoyerMaison(1200);
+        RueDeVaugirard.setLoyerHotel(1200);
         this.plateau.add(RueDeVaugirard);
 
         NonAchetable Chance1 = new NonAchetable();
@@ -78,20 +74,18 @@ public class PlateauDeJeu {
         RueDeCourcelle.setNumCase(8);
         RueDeCourcelle.setNomCase("Rue De Courcelle");
         RueDeCourcelle.setPrix(1700);
-        RueDeCourcelle.setNombreMaison(0);
-        RueDeCourcelle.setNombreHotel(0);
-        RueDeCourcelle.setPrixMaison(1300);
-        RueDeCourcelle.setPrixHotel(1300);
+        RueDeCourcelle.setNbMaison(0);
+        RueDeCourcelle.setLoyerMaison(1300);
+        RueDeCourcelle.setLoyerHotel(1300);
         this.plateau.add(RueDeCourcelle);
 
         Constructible AvenueDeLaRepublique = new Constructible();
         AvenueDeLaRepublique.setNumCase(9);
         AvenueDeLaRepublique.setNomCase("Avenue De La Republique");
         AvenueDeLaRepublique.setPrix(1800);
-        AvenueDeLaRepublique.setNombreMaison(0);
-        AvenueDeLaRepublique.setNombreHotel(0);
-        AvenueDeLaRepublique.setPrixMaison(1400);
-        AvenueDeLaRepublique.setPrixHotel(1400);
+        AvenueDeLaRepublique.setNbMaison(0);
+        AvenueDeLaRepublique.setLoyerMaison(1400);
+        AvenueDeLaRepublique.setLoyerHotel(1400);
         this.plateau.add(AvenueDeLaRepublique);
 
         NonAchetable Prison = new NonAchetable();
@@ -103,10 +97,9 @@ public class PlateauDeJeu {
         BoulevardDeLaVilette.setNumCase(11);
         BoulevardDeLaVilette.setNomCase("Boulevard De La Vilette");
         BoulevardDeLaVilette.setPrix(1900);
-        BoulevardDeLaVilette.setNombreMaison(0);
-        BoulevardDeLaVilette.setNombreHotel(0);
-        BoulevardDeLaVilette.setPrixMaison(1400);
-        BoulevardDeLaVilette.setPrixHotel(1400);
+        BoulevardDeLaVilette.setNbMaison(0);
+        BoulevardDeLaVilette.setLoyerMaison(1400);
+        BoulevardDeLaVilette.setLoyerHotel(1400);
         this.plateau.add(BoulevardDeLaVilette);
 
         NonAchetable Electricite = new NonAchetable();
@@ -118,20 +111,18 @@ public class PlateauDeJeu {
         AvenueDeNeuilly.setNumCase(13);
         AvenueDeNeuilly.setNomCase("Avenue De Neuilly");
         AvenueDeNeuilly.setPrix(2000);
-        AvenueDeNeuilly.setNombreMaison(0);
-        AvenueDeNeuilly.setNombreHotel(0);
-        AvenueDeNeuilly.setPrixMaison(1500);
-        AvenueDeNeuilly.setPrixHotel(1500);
+        AvenueDeNeuilly.setNbMaison(0);
+        AvenueDeNeuilly.setLoyerMaison(1500);
+        AvenueDeNeuilly.setLoyerHotel(1500);
         this.plateau.add(AvenueDeNeuilly);
 
         Constructible RueDeParadis = new Constructible();
         RueDeParadis.setNumCase(14);
         RueDeParadis.setNomCase("Rue De Paradis");
         RueDeParadis.setPrix(2100);
-        RueDeParadis.setNombreMaison(0);
-        RueDeParadis.setNombreHotel(0);
-        RueDeParadis.setPrixMaison(1600);
-        RueDeParadis.setPrixHotel(1600);
+        RueDeParadis.setNbMaison(0);
+        RueDeParadis.setLoyerMaison(1600);
+        RueDeParadis.setLoyerHotel(1600);
         this.plateau.add(RueDeParadis);
 
         Gare Lyon = new Gare();
@@ -144,10 +135,9 @@ public class PlateauDeJeu {
         AvenueMozart.setNumCase(16);
         AvenueMozart.setNomCase("Avenue Mozart");
         AvenueMozart.setPrix(2100);
-        AvenueMozart.setNombreMaison(0);
-        AvenueMozart.setNombreHotel(0);
-        RueDeParadis.setPrixMaison(1700);
-        RueDeParadis.setPrixHotel(1700);
+        AvenueMozart.setNbMaison(0);
+        RueDeParadis.setLoyerMaison(1700);
+        RueDeParadis.setLoyerHotel(1700);
         this.plateau.add(AvenueMozart);
 
         NonAchetable CaisseDeCommunaute2 = new NonAchetable();
@@ -159,20 +149,18 @@ public class PlateauDeJeu {
         BoulevardSaintMichel.setNumCase(18);
         BoulevardSaintMichel.setNomCase("Boulevard Saint Michel");
         BoulevardSaintMichel.setPrix(2200);
-        BoulevardSaintMichel.setNombreMaison(0);
-        BoulevardSaintMichel.setNombreHotel(0);
-        BoulevardSaintMichel.setPrixMaison(1800);
-        BoulevardSaintMichel.setPrixHotel(1800);
+        BoulevardSaintMichel.setNbMaison(0);
+        BoulevardSaintMichel.setLoyerMaison(1800);
+        BoulevardSaintMichel.setLoyerHotel(1800);
         this.plateau.add(BoulevardSaintMichel);
 
         Constructible PlacePigalle = new Constructible();
         PlacePigalle.setNumCase(19);
         PlacePigalle.setNomCase("Place Pigalle");
         PlacePigalle.setPrix(2300);
-        PlacePigalle.setNombreMaison(0);
-        PlacePigalle.setNombreHotel(0);
-        PlacePigalle.setPrixMaison(1900);
-        PlacePigalle.setPrixHotel(1900);
+        PlacePigalle.setNbMaison(0);
+        PlacePigalle.setLoyerMaison(1900);
+        PlacePigalle.setLoyerHotel(1900);
         this.plateau.add(PlacePigalle);
 
         NonAchetable ParcGratuit = new NonAchetable();
@@ -184,10 +172,9 @@ public class PlateauDeJeu {
         AvenueMatignon.setNumCase(21);
         AvenueMatignon.setNomCase("Avenue Matignon");
         AvenueMatignon.setPrix(2400);
-        AvenueMatignon.setNombreMaison(0);
-        AvenueMatignon.setNombreHotel(0);
-        AvenueMatignon.setPrixMaison(2000);
-        AvenueMatignon.setPrixHotel(2000);
+        AvenueMatignon.setNbMaison(0);
+        AvenueMatignon.setLoyerMaison(2000);
+        AvenueMatignon.setLoyerHotel(2000);
         this.plateau.add(AvenueMatignon);
 
         NonAchetable Chance2 = new NonAchetable();
@@ -199,20 +186,18 @@ public class PlateauDeJeu {
         BoulevardMalesherbes.setNumCase(23);
         BoulevardMalesherbes.setNomCase("Boulevard Malesherbes");
         BoulevardMalesherbes.setPrix(2500);
-        BoulevardMalesherbes.setNombreMaison(0);
-        BoulevardMalesherbes.setNombreHotel(0);
-        BoulevardMalesherbes.setPrixMaison(2100);
-        BoulevardMalesherbes.setPrixHotel(2100);
+        BoulevardMalesherbes.setNbMaison(0);
+        BoulevardMalesherbes.setLoyerMaison(2100);
+        BoulevardMalesherbes.setLoyerHotel(2100);
         this.plateau.add(BoulevardMalesherbes);
 
         Constructible AvenueHenryMartin = new Constructible();
         AvenueHenryMartin.setNumCase(24);
         AvenueHenryMartin.setNomCase("Avenue Henry Martin");
         AvenueHenryMartin.setPrix(2600);
-        AvenueHenryMartin.setNombreMaison(0);
-        AvenueHenryMartin.setNombreHotel(0);
-        AvenueHenryMartin.setPrixMaison(2200);
-        AvenueHenryMartin.setPrixHotel(2200);
+        AvenueHenryMartin.setNbMaison(0);
+        AvenueHenryMartin.setLoyerMaison(2200);
+        AvenueHenryMartin.setLoyerHotel(2200);
         this.plateau.add(AvenueHenryMartin);
 
         Gare Nord = new Gare();
@@ -225,20 +210,18 @@ public class PlateauDeJeu {
         FaubourgSaintHonore.setNumCase(26);
         FaubourgSaintHonore.setNomCase("Faubourg Saint Honoré");
         FaubourgSaintHonore.setPrix(2700);
-        FaubourgSaintHonore.setNombreMaison(0);
-        FaubourgSaintHonore.setNombreHotel(0);
-        FaubourgSaintHonore.setPrixMaison(2300);
-        FaubourgSaintHonore.setPrixHotel(2300);
+        FaubourgSaintHonore.setNbMaison(0);
+        FaubourgSaintHonore.setLoyerMaison(2300);
+        FaubourgSaintHonore.setLoyerHotel(2300);
         this.plateau.add(FaubourgSaintHonore);
 
         Constructible PlaceDeLaBourse = new Constructible();
         PlaceDeLaBourse.setNumCase(27);
         PlaceDeLaBourse.setNomCase("Place De La Bourse");
         PlaceDeLaBourse.setPrix(2800);
-        PlaceDeLaBourse.setNombreMaison(0);
-        PlaceDeLaBourse.setNombreHotel(0);
-        PlaceDeLaBourse.setPrixMaison(2400);
-        PlaceDeLaBourse.setPrixHotel(2400);
+        PlaceDeLaBourse.setNbMaison(0);
+        PlaceDeLaBourse.setLoyerMaison(2400);
+        PlaceDeLaBourse.setLoyerHotel(2400);
         this.plateau.add(PlaceDeLaBourse);
 
         NonAchetable DistributionDesEaux = new NonAchetable();
@@ -250,10 +233,9 @@ public class PlateauDeJeu {
         RueDeLaFayette.setNumCase(29);
         RueDeLaFayette.setNomCase("Rue De La Fayette");
         RueDeLaFayette.setPrix(2900);
-        RueDeLaFayette.setNombreMaison(0);
-        RueDeLaFayette.setNombreHotel(0);
-        RueDeLaFayette.setPrixMaison(2500);
-        RueDeLaFayette.setPrixHotel(2500);
+        RueDeLaFayette.setNbMaison(0);
+        RueDeLaFayette.setLoyerMaison(2500);
+        RueDeLaFayette.setLoyerHotel(2500);
         this.plateau.add(RueDeLaFayette);
 
         NonAchetable AllezEnPrison = new NonAchetable();
@@ -265,20 +247,18 @@ public class PlateauDeJeu {
         AvenueDeBreteuil.setNumCase(31);
         AvenueDeBreteuil.setNomCase("Avenue De Breteuil");
         AvenueDeBreteuil.setPrix(3000);
-        AvenueDeBreteuil.setNombreMaison(0);
-        AvenueDeBreteuil.setNombreHotel(0);
-        AvenueDeBreteuil.setPrixMaison(2600);
-        AvenueDeBreteuil.setPrixHotel(2600);
+        AvenueDeBreteuil.setNbMaison(0);
+        AvenueDeBreteuil.setLoyerMaison(2600);
+        AvenueDeBreteuil.setLoyerHotel(2600);
         this.plateau.add(AvenueDeBreteuil);
 
         Constructible AvenueFoch = new Constructible();
         AvenueFoch.setNumCase(32);
         AvenueFoch.setNomCase("Avenue Foch");
         AvenueFoch.setPrix(3100);
-        AvenueFoch.setNombreMaison(0);
-        AvenueFoch.setNombreHotel(0);
-        AvenueFoch.setPrixMaison(2700);
-        AvenueFoch.setPrixHotel(2700);
+        AvenueFoch.setNbMaison(0);
+        AvenueFoch.setLoyerMaison(2700);
+        AvenueFoch.setLoyerHotel(2700);
         this.plateau.add(AvenueFoch);
 
         NonAchetable CaisseDeCommunaute3 = new NonAchetable();
@@ -290,10 +270,9 @@ public class PlateauDeJeu {
         BoulevardDesCapucines.setNumCase(34);
         BoulevardDesCapucines.setNomCase("Boulevard Des Capucines");
         BoulevardDesCapucines.setPrix(3200);
-        BoulevardDesCapucines.setNombreMaison(0);
-        BoulevardDesCapucines.setNombreHotel(0);
-        BoulevardDesCapucines.setPrixMaison(2800);
-        BoulevardDesCapucines.setPrixHotel(2800);
+        BoulevardDesCapucines.setNbMaison(0);
+        BoulevardDesCapucines.setLoyerMaison(2800);
+        BoulevardDesCapucines.setLoyerHotel(2800);
         this.plateau.add(BoulevardDesCapucines);
 
         Gare SaintLazarre = new Gare();
@@ -311,10 +290,9 @@ public class PlateauDeJeu {
         AvenueDesChampsElysee.setNumCase(37);
         AvenueDesChampsElysee.setNomCase("Avenue Des Champs Elysee");
         AvenueDesChampsElysee.setPrix(3300);
-        AvenueDesChampsElysee.setNombreMaison(0);
-        AvenueDesChampsElysee.setNombreHotel(0);
-        AvenueDesChampsElysee.setPrixMaison(2900);
-        AvenueDesChampsElysee.setPrixHotel(2900);
+        AvenueDesChampsElysee.setNbMaison(0);
+        AvenueDesChampsElysee.setLoyerMaison(2900);
+        AvenueDesChampsElysee.setLoyerHotel(2900);
         this.plateau.add(AvenueDesChampsElysee);
 
         NonAchetable TaxeDeLuxe = new NonAchetable();
@@ -326,10 +304,9 @@ public class PlateauDeJeu {
         RueDeLaPaix.setNumCase(39);
         RueDeLaPaix.setNomCase("Rue De La Paix");
         RueDeLaPaix.setPrix(3400);
-        RueDeLaPaix.setNombreMaison(0);
-        RueDeLaPaix.setNombreHotel(0);
-        RueDeLaPaix.setPrixMaison(3000);
-        RueDeLaPaix.setPrixHotel(3000);
+        RueDeLaPaix.setNbMaison(0);
+        RueDeLaPaix.setLoyerMaison(3000);
+        RueDeLaPaix.setLoyerHotel(3000);
         this.plateau.add(RueDeLaPaix);
 
     }
