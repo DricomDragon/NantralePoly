@@ -38,11 +38,14 @@ public abstract class Achetable extends Case {
         this.proprietaire = proprietaire;
     }
 
-    public void acheter(Joueur joueur) {
-        this.setProprietaire(joueur);
+    public void acheter(Joueur joueur){
+        if (this.getProprietaire() == null) {
+            joueur.setFortune(joueur.getFortune() - this.getPrix());
+            this.setProprietaire(joueur);
+        }
     }
 
-    public abstract int loyer(Joueur joueur);
+    public abstract int loyer();
 
     public String toString() {
         String s = super.toString();
