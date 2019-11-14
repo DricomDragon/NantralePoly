@@ -5,6 +5,10 @@ import plateau.PlateauDeJeu;
 
 public class Gare extends Achetable {
 
+    public Gare() {
+        super();
+    }
+
     public Gare(int numCase, String nomCase, int prix) {
         this.numCase = numCase;
         this.nomCase = nomCase;
