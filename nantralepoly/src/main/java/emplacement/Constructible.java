@@ -42,6 +42,7 @@ public class Constructible extends Achetable {
     public int getNombreHotel() {
         return nombreHotel;
     }
+
     public void setPrixMaison(int prixMaison) {
         this.prixMaison = prixMaison;
     }
@@ -66,6 +67,12 @@ public class Constructible extends Achetable {
             int temp = (int) (this.getPrix()*0.05);
             return temp + this.prixMaison * this.nombreMaison + this.nombreHotel * this.prixHotel;
         }
+    }
+
+    public void construire() {
+        int somme = (int)(this.getPrix() * 0.1); // Le prix d'une maison correspond à 10% du prix du terrain
+        this.getProprietaire().setFortune(this.proprietaire.getFortune() - somme);
+        this.setNombreMaison(this.getNombreMaison() + 1);
     }
 
     @Override
