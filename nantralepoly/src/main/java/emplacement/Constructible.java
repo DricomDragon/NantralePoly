@@ -3,75 +3,70 @@ package emplacement;
 import joueur.Joueur;
 
 public class Constructible extends Achetable {
-    private int prixMaison;
-    private int prixHotel;
-    private int nombreMaison;
-    private int nombreHotel;
+    private int loyerMaison;
+    private int loyerHotel;
+    private int nbMaison;
 
     public Constructible() {
     }
 
-    public Constructible(int numCase, String nomCase, int prix, Joueur proprietaire, int prixMaison, int prixHotel) {
+    public Constructible(int numCase, String nomCase, int prix, Joueur proprietaire, int loyerMaison, int loyerHotel) {
         super(numCase, nomCase, prix, proprietaire);
-        this.prixMaison = prixMaison;
-        this.prixHotel = prixHotel;
-        this.nombreMaison = 0;
-        this.nombreHotel = 0;
+        this.loyerMaison = loyerMaison;
+        this.loyerHotel = loyerHotel;
+        this.nbMaison = 0;
     }
 
-    public Constructible(int numCase, String nomCase, int prix, Joueur proprietaire, int prixMaison, int prixHotel, int nombreMaison, int nombreHotel) {
+    public Constructible(int numCase, String nomCase, int prix, Joueur proprietaire, int loyerMaison, int loyerHotel, int nbMaison) {
         super(numCase, nomCase, prix, proprietaire);
-        this.prixMaison = prixMaison;
-        this.prixHotel = prixHotel;
-        this.nombreMaison = nombreMaison;
-        this.nombreHotel = nombreHotel;
+        this.loyerMaison = loyerMaison;
+        this.loyerHotel = loyerHotel;
+        this.nbMaison = nbMaison;
     }
 
-    public int getPrixMaison() {
-        return prixMaison;
+    public int getLoyerMaison() {
+        return loyerMaison;
     }
 
-    public int getPrixHotel() {
-        return prixHotel;
+    public int getLoyerHotel() {
+        return loyerHotel;
     }
 
-    public int getNombreMaison() {
-        return nombreMaison;
+    public int getNbMaison() {
+        return nbMaison;
     }
 
-    public int getNombreHotel() {
-        return nombreHotel;
+    public void setLoyerMaison(int loyerMaison) {
+        this.loyerMaison = loyerMaison;
     }
 
-    public void setPrixMaison(int prixMaison) {
-        this.prixMaison = prixMaison;
+    public void setLoyerHotel(int loyerHotel) {
+        this.loyerHotel = loyerHotel;
     }
 
-    public void setPrixHotel(int prixHotel) {
-        this.prixHotel = prixHotel;
+    public void setNbMaison(int nbMaison) {
+        this.nbMaison = nbMaison;
     }
 
-    public void setNombreMaison(int nombreMaison) {
-        this.nombreMaison = nombreMaison;
+    public void reset(){
+        super.reset();
+        this.setNbMaison(0);
     }
 
-    public void setNombreHotel(int nombreHotel) {
-        this.nombreHotel = nombreHotel;
-    }
-
-    public int loyer() {
-        if (this.getProprietaire() == null) {
-            return 0;
-        } else {
-            int temp = (int) (this.getPrix() * 0.05);
-            return temp + this.prixMaison * this.nombreMaison + this.nombreHotel * this.prixHotel;
+    public int loyer(){
+        int temp = (int) (this.getPrix()*0.05);
+        if (this.getNbMaison() == 5) {
+            return temp + this.getLoyerHotel();
+        }
+        else {
+            return temp + this.getLoyerMaison() * this.getNbMaison();
         }
     }
 
     public void construire() {
-        int somme = (int) (this.getPrix() * 0.1); // Le prix d'une maison correspond à 10% du prix du terrain
-        this.getProprietaire().setFortune(this.proprietaire.getFortune() - somme);
-        this.setNombreMaison(this.getNombreMaison() + 1);
+        int somme = (int)(this.getPrix() * 0.1); // Le prix d'une maison correspond à 10% du prix du terrain
+        this.getProprietaire().setFortune(this.getProprietaire().getFortune() - somme);
+        this.setNbMaison(this.getNbMaison() + 1);
     }
 
     @Override
